@@ -6,20 +6,29 @@ export class Text extends LitElement {
   static get properties() {
     return {
       class: { type: String },
+      styleMode: { type: String },
       handleClick: {},
     };
   }
 
   static get styles() {
+    const DARK = COLORS.DARK.BUTTON;
+    const LIGHT = COLORS.LIGHT.BUTTON;
+
+    // TODO: why & css anotation is not working here? find a shorter way for using > 1 class in same node as css selector
     return css`
-      button {
-        color: red;
+      .text-button.dark {
+        color: ${DARK.TEXT};
+        background-color: ${DARK.BACKGROUND};
       }
 
-      .storybook-example {
-        /* background-color: var(--background-color); */
-        color: ${COLORS.BUTTON.TEXT};
-        background-color: ${COLORS.BUTTON.BACKGROUND};
+      .text-button.light {
+        color: ${LIGHT.TEXT};
+        background-color: ${LIGHT.BACKGROUND};
+      }
+
+      .text-button.hidden {
+        display: none;
       }
     `;
   }
@@ -31,7 +40,10 @@ export class Text extends LitElement {
 
   render() {
     return html`
-      <button class=${this.class} @click=${this.handleClick}>
+      <button
+        class=${`text-button ${this.styleMode} ${this.class}`}
+        @click=${this.handleClick}
+      >
         <slot></slot>
       </button>
     `;
