@@ -1,5 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 
+import { COLORS } from '../../../../styles/constants.css.js';
+
 export class Text extends LitElement {
   static get properties() {
     return {
@@ -15,7 +17,9 @@ export class Text extends LitElement {
       }
 
       .storybook-example {
-        background-color: var(--background-color);
+        /* background-color: var(--background-color); */
+        color: ${COLORS.BUTTON.TEXT};
+        background-color: ${COLORS.BUTTON.BACKGROUND};
       }
     `;
   }
