@@ -1,8 +1,6 @@
-<p align="center">
-  <img width="200" src="https://open-wc.org/hero.png"></img>
-</p>
+## WIP: translating [Chemistry-UI](https://github.com/W01fw00d/chemistry-ui) into a Lit based project
 
-## Open-wc Starter App
+This is an Open-wc Starter App
 
 [![Built with open-wc recommendations](https://img.shields.io/badge/built%20with-open--wc-blue.svg)](https://github.com/open-wc)
 

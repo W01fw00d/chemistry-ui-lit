@@ -1,28 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="Description" content="Put your description here." />
+    <base href="/" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="Description" content="Put your description here.">
-  <base href="/">
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: #ededed;
+      }
+    </style>
+    <title>Components Template Example</title>
+  </head>
 
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background-color: #ededed;
-    }
-  </style>
-  <title>chemistry-ui-lit</title>
-</head>
+  <body>
+    <text-button></text-button>
 
-<body>
-  <chemistry-ui-lit></chemistry-ui-lit>
-
-  <script type="module" src="./src/chemistry-ui-lit.js"></script>
-</body>
-
+    <script
+      type="module"
+      src="./src/components/atoms/buttons/text/custom-element.js"
+    ></script>
+  </body>
 </html>

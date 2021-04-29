@@ -1,9 +1,9 @@
 import { html } from 'lit-html';
-import '../src/chemistry-ui-lit.js';
+import './custom-element.js';
 
 export default {
-  title: 'ChemistryUiLit',
-  component: 'chemistry-ui-lit',
+  title: 'TextButton',
+  component: 'text-button',
   argTypes: {
     backgroundColor: { control: 'color' },
   },
@@ -11,15 +11,15 @@ export default {
 
 function Template({ title, backgroundColor }) {
   return html`
-    <chemistry-ui-lit
+    <text-button
       style="--chemistry-ui-lit-background-color: ${backgroundColor || 'white'}"
       .title=${title}
     >
-    </chemistry-ui-lit>
+    </text-button>
   `;
 }
 
-export const App = Template.bind({});
-App.args = {
-  title: 'My app',
+export const Default = Template.bind({});
+Default.args = {
+  title: 'Title',
 };

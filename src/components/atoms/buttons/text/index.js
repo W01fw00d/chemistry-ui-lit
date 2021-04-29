@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
-import { openWcLogo } from './open-wc-logo.js';
 
-export class ChemistryUiLit extends LitElement {
+export class Text extends LitElement {
   static get properties() {
     return {
       title: { type: String },
@@ -61,7 +60,6 @@ export class ChemistryUiLit extends LitElement {
   render() {
     return html`
       <main>
-        <div class="logo">${openWcLogo}</div>
         <h1>${this.title}</h1>
 
         <p>Edit <code>src/ChemistryUiLit.js</code> and save to reload.</p>
