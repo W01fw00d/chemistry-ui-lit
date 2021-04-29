@@ -9,17 +9,23 @@ export default {
   },
 };
 
-function Template({ title, backgroundColor }) {
+function Template({ children, backgroundColor }) {
+  const handleClick = () => {
+    console.log('Clicked on Storybook');
+  };
+
   return html`
     <text-button
-      style="--chemistry-ui-lit-background-color: ${backgroundColor || 'white'}"
-      .title=${title}
+      style="--background-color: ${backgroundColor || 'white'}"
+      class="storybook-example"
+      .handleClick=${handleClick}
     >
+      ${children}
     </text-button>
   `;
 }
 
 export const Default = Template.bind({});
 Default.args = {
-  title: 'Title',
+  children: 'Text Button',
 };
