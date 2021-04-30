@@ -1,4 +1,6 @@
 import { html } from 'lit-html';
+import { action } from 'storybook-prebuilt/addon-actions.js';
+
 import './custom-element.js';
 
 export default {
@@ -6,17 +8,11 @@ export default {
   component: 'text-button',
   argTypes: {
     styleMode: { control: { type: 'select', options: ['dark', 'light'] } },
+    className: { control: { type: 'select', options: ['hidden', ''] } },
   },
 };
 
 function Template({ text, children, className, styleMode }) {
-  // TODO: How to change storybook UI between dark and light mode?
-
-  const handleClick = () => {
-    // TODO: add storybook actions
-    console.log('Clicked on Storybook');
-  };
-
   return html`
     <div
       style="display: flex;align-items: center;justify-content: center; margin: 20px"
@@ -24,7 +20,7 @@ function Template({ text, children, className, styleMode }) {
       <text-button
         class=${className}
         styleMode=${styleMode || 'dark'}
-        .handleClick=${handleClick}
+        .handleClick=${action('Text Button was clicked')}
       >
         ${children(text)}
       </text-button>
@@ -47,6 +43,7 @@ HalfBold.args = {
 
 export const Hidden = Template.bind({});
 Hidden.args = {
+  text: 'Text Button',
   children: content => content,
   className: 'hidden',
 };
